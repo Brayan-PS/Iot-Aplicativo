@@ -1,50 +1,45 @@
-# Welcome to your Expo app 👋
+# 📱 Monitor de Calidad del Aire (IoT)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+> Aplicación móvil desarrollada en **React Native** para visualizar en tiempo real datos de sensores ambientales y recibir alertas de seguridad.
 
-## Get started
+## 📖 ¿De qué trata este proyecto?
+Esta aplicación permite monitorear el estado del aire en un entorno específico (como una oficina o fábrica). Lee los datos enviados por sensores físicos (ESP32/Arduino) a una hoja de cálculo de Google Sheets y los presenta de forma gráfica en el celular.
 
-1. Install dependencies
+Si los niveles de gases tóxicos o temperatura superan el límite seguro, el sistema envía una **Notificación Push** al celular, incluso si la app está cerrada.
 
-   ```bash
-   npm install
-   ```
+## 🚀 Funcionalidades Principales
+* **Lectura en Tiempo Real:** Actualización de datos cada 5 segundos desde la nube.
+* **Visualización Gráfica:** Medidores circulares para CO2, Humo, Temperatura, Humedad y Gases (NH3, Benceno, etc.).
+* **Sistema de Alertas Híbrido:**
+    * *Local:* Vibración y aviso en pantalla si la app está abierta.
+    * *Remoto (Push):* Notificaciones de emergencia gestionadas por un script en la nube (Google Apps Script).
+* **Registro Automático:** El dispositivo se vincula al sistema de alertas automáticamente al abrir la aplicación.
 
-2. Start the app
+|
 
-   ```bash
-   npx expo start
-   ```
+*(Nota: Reemplaza estas imágenes con capturas reales de tu celular para la evidencia).*
 
-In the output, you'll find options to open the app in a
+## 🛠 Tecnologías Usadas
+* **Frontend:** React Native + Expo.
+* **Backend / Base de Datos:** Google Sheets (CSV).
+* **Lógica de Nube:** Google Apps Script (JavaScript).
+* **Notificaciones:** Expo Notifications Service.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## ⚙️ Cómo ejecutar el proyecto
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone [https://github.com/Brayan-PS/Iot-Aplicativo.git](https://github.com/Brayan-PS/Iot-Aplicativo.git)
+    cd Iot-Aplicativo
+    ```
 
-## Get a fresh project
+2.  **Instalar las dependencias:**
+    ```bash
+    npm install
+    ```
 
-When you're ready, run:
+3.  **Correr la aplicación:**
+    ```bash
+    npx expo start
+    ```
 
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
